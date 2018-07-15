@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Concentration Game</string>
+
+    <string name="hidden_card">Hidden Card</string>
+    <string name="shown_card">Shown Card</string>
+    <string name="player">Player score</string>
+    <string name="minutes">Minutes</string>
+
+    <string name="correct">Correct</string>
+</resources>
