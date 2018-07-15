@@ -7,7 +7,7 @@ public class ScoreDbSchema {
         public static final class Cols {
             public static final String UUID = "uuid";
             public static final String SCORE = "score";
-            public static final String DATE = "date";
+            public static final String TIME = "time";
         }
     }
 }

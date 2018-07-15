@@ -6,7 +6,7 @@ import java.util.UUID;
 public class Score {
     private UUID mUUID;
     private int mScore;
-    private Date mDate;
+    private String mTime;
 
     public Score() {
         this(UUID.randomUUID());
@@ -28,11 +28,11 @@ public class Score {
         mScore = score;
     }
 
-    public Date getDate() {
-        return mDate;
+    public String getTime() {
+        return mTime;
     }
 
-    public void setDate(Date date) {
-        mDate = date;
+    public void setTime(String time) {
+        mTime = time;
     }
 }

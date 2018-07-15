@@ -9,6 +9,7 @@
     <string name="correct">Correct</string>
     <string name="welcome">Welcome</string>
     <string name="time">Time</string>
+    <string name="show_scores">Show scores</string>
 
     <string-array name="categories">
         <item>Random</item>

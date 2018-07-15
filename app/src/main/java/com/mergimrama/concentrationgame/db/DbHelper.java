@@ -20,7 +20,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 " _id integer primary key autoincrement, " +
                 ScoreTable.Cols.UUID + ", " +
                 ScoreTable.Cols.SCORE + ", " +
-                ScoreTable.Cols.DATE + ")"
+                ScoreTable.Cols.TIME + ")"
         );
     }
 

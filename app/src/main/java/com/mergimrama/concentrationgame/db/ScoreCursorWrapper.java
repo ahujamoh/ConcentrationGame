@@ -21,11 +21,11 @@ public class ScoreCursorWrapper extends CursorWrapper {
     public Score getScore() {
         String uuidString = getString(getColumnIndex(ScoreTable.Cols.UUID));
         int scoreValue = getInt(getColumnIndex(ScoreTable.Cols.SCORE));
-        long date = getLong(getColumnIndex(ScoreTable.Cols.DATE));
+        String time = getString(getColumnIndex(ScoreTable.Cols.TIME));
 
         Score score = new Score(UUID.fromString(uuidString));
         score.setScore(scoreValue);
-        score.setDate(new Date(date));
+        score.setTime(time);
 
         return score;
     }
