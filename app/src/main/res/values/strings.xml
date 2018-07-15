@@ -7,4 +7,12 @@
     <string name="minutes">Minutes</string>
 
     <string name="correct">Correct</string>
+    <string name="welcome">Welcome</string>
+    <string name="time">Time</string>
+
+    <string-array name="categories">
+        <item>Random</item>
+        <item>Dogs</item>
+        <item>Cats</item>
+    </string-array>
 </resources>
