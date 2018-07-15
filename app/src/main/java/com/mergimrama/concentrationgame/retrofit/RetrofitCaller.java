@@ -15,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitCaller {
     private static final String TAG = RetrofitCaller.class.getSimpleName();
-    private static String apiKey = "hidden";
+    private static String apiKey = "e15d66bc997eb1b534e9e18e54181e15";
     private static String BASE_URL = "https://api.flickr.com/services/rest/";
 
     public static <S> S call(Class<S> serviceClass) {
