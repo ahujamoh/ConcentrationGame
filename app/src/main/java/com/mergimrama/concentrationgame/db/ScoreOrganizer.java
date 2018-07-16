@@ -13,16 +13,11 @@ import java.util.List;
 import java.util.UUID;
 
 public class ScoreOrganizer {
-    private static ScoreOrganizer sScoreOrganizer;
-
     private Context mContext;
     private SQLiteDatabase mDatabase;
 
     public static ScoreOrganizer getInstance(Context context) {
-        if (sScoreOrganizer == null) {
-            sScoreOrganizer = new ScoreOrganizer(context);
-        }
-        return sScoreOrganizer;
+        return new ScoreOrganizer(context);
     }
 
     private ScoreOrganizer(Context context) {

@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Chronometer;
 import android.widget.TextView;
@@ -59,6 +61,11 @@ public class GameActivity extends AppCompatActivity implements GalleryAdapter.Ca
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
         String category = getIntent().getStringExtra(EXTRA_CATEGORY);
 
         mRecyclerView = findViewById(R.id.recyclerView);
@@ -67,9 +74,15 @@ public class GameActivity extends AppCompatActivity implements GalleryAdapter.Ca
         mProgressView = findViewById(R.id.progressView);
         mConstraintLayout = findViewById(R.id.mainConstraintLl);
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 3);
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+            mRecyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 3));
+        }
+        else{
+            mRecyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 4));
+        }
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 3);
         mGalleryAdapter = new GalleryAdapter(this);
-        mRecyclerView.setLayoutManager(gridLayoutManager);
+//        mRecyclerView.setLayoutManager(gridLayoutManager);
 
 //        getRecentPhotos();
         if (category != null) {
@@ -88,6 +101,16 @@ public class GameActivity extends AppCompatActivity implements GalleryAdapter.Ca
         if (mResponseBodyCall != null && mResponseBodyCall.isExecuted()) {
             mResponseBodyCall.cancel();
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void getRecentPhotos() {

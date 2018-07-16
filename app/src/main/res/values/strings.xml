@@ -10,6 +10,7 @@
     <string name="welcome">Welcome</string>
     <string name="time">Time</string>
     <string name="show_scores">Show scores</string>
+    <string name="your_score">Your Score</string>
 
     <string-array name="categories">
         <item>Random</item>
